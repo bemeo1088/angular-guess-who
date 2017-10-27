@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/angular.min.js"></script>
+    <script src="client.js"></script>
+    <title>ANGULAR GUESS WHO</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="GuessWhoController as guesswho">
+        <input type="text" ng-model="guesswho.name">
+        <p>{{guesswho.people}}</p>
+        <input type="text" ng-model="guesswho.github">
+        <p>{{guesswho.people}}</p>
+         Hello {{guesswho.message}}!!!
+        <button ng-click="guesswho.addPerson()">Guess</button>
+        <ul>
+            <li ng-repeat="person in guesswho.people">
+                <img ng-click="guesswho.greetPerson(person)" ng-src="https://github.com/{{person.github}}.png?size=80">
+            </li>
+        
+        </ul>
+    </div>
+</body>
+</html>
